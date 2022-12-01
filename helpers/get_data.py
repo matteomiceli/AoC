@@ -14,7 +14,6 @@ def get_data(path):
     'raw': stringified,
     'array': array,
     'chunked': chunked,
-    'double_newline': double_newline
   }
 
 

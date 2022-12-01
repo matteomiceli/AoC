@@ -1,7 +1,10 @@
+import sys
+sys.path.append("..")
+
 from helpers.get_data import get_data
 
 def one():
-  data = get_data('./day1/data.txt')
+  data = get_data('./data.txt')
   elves = data['chunked']
 
   elf_calories = []
@@ -18,20 +21,7 @@ def one():
     elf_calories.sort()
     elf_calories.reverse()
 
+  print(max(elf_calories))
   print(elf_calories[0] + elf_calories[1] + elf_calories[2])
 
-  
-
-def find_biggest(map: dict):
-  highest = 0
-  idx = 0
-
-  for k, value in map.items():
-    if value > highest:
-      highest = value 
-      idx = k
-  
-  return [highest, idx ]
-
-
-    
+one()
