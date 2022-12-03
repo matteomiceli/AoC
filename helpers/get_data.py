@@ -2,7 +2,7 @@
 def get_data(path):
   f = open(path, 'r')
   stringified = f.read()
-  array = stringified.split('\n')
+  list = stringified.split('\n')
   double_newline = stringified.split('\n\n')
   chunked = []
   pairs = []
@@ -13,12 +13,12 @@ def get_data(path):
     chunked.append(newlist)
   
   # build list of pairs
-  for item in array:
+  for item in list:
     pairs.append(item.split())
   
   return {
     'raw': stringified,
-    'array': array,
+    'list': list,
     'chunked': chunked,
     'pairs': pairs
   }
