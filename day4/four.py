@@ -1,7 +1,7 @@
 import sys
 sys.path.append("..")
 
-from helpers.get_data import get_data
+from helpers.helpers import get_data
 
 data = get_data('./data.txt')
 
