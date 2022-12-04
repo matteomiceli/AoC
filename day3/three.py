@@ -1,7 +1,7 @@
 import sys
 sys.path.append("..")
 
-from helpers.get_data import get_data
+from helpers.helpers import get_data
 
 def halve_sack_contents(contents):
   first = contents[0 : (len(contents)//2)]
