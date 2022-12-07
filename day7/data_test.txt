@@ -1,0 +1,6 @@
+$ cd /
+$ ls
+dir a
+1 b.txt
+$ cd a
+1 c.da
