@@ -1,6 +1,6 @@
 const { getData } = require("../helpers/helpers");
 
-const lines = getData("./data_test.txt").array;
+const lines = getData("./data.txt").array;
 
 const workingDir = [];
 const fileSystem = {};
@@ -30,8 +30,8 @@ function resolveFile(tokens) {
   const size = parseInt(tokens[0]);
 
   workingDir.forEach((_, i) => {
-    const dir = workingDir[i];
-    fileSystem[dir] += size;
+    const path = workingDir.slice(0, i + 1).join(" ");
+    fileSystem[path] += size;
   });
 }
 
@@ -47,10 +47,10 @@ function command(tokens) {
     workingDir.pop();
     return;
   }
-
   workingDir.push(subject);
-  if (!fileSystem[subject]) {
-    fileSystem[subject] = 0;
+  const path = workingDir.join(" ");
+  if (!fileSystem[path]) {
+    fileSystem[path] = 0;
   }
 }
 
@@ -59,7 +59,6 @@ function findSumOfDirectories(lines, maxSize) {
     parser(tokenizer(line));
   });
 
-  console.log(fileSystem);
   return Object.values(fileSystem).reduce((acc, size) => {
     if (size <= maxSize) {
       return acc + size;
@@ -68,4 +67,16 @@ function findSumOfDirectories(lines, maxSize) {
   }, 0);
 }
 
-console.log(findSumOfDirectories(lines, 100000));
+findSumOfDirectories(lines, 100000);
+
+const fsSize = 70000000;
+const desiredUnused = 30000000;
+function deleteSpace(fileSystem) {
+  const toDelete = fileSystem["/"] - (fsSize - desiredUnused);
+  const sorted = Object.values(fileSystem)
+    .sort((a, b) => a - b)
+    .filter((val) => val > toDelete);
+  return sorted[0];
+}
+
+console.log(deleteSpace(fileSystem));
