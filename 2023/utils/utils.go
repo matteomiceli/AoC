@@ -16,3 +16,12 @@ func ReadLines(path string) []string {
 
 	return strings.Split(data, "\n")
 }
+
+func Sum(n []int) int {
+	total := 0
+
+	for _, v := range n {
+		total += v
+	}
+	return total
+}
