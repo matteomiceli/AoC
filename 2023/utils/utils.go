@@ -27,6 +27,15 @@ func Sum(n []int) int {
 	return total
 }
 
+func Multiply(n []int) int {
+	total := 1
+
+	for _, v := range n {
+		total *= v
+	}
+	return total
+}
+
 func IsNumeric(c string) bool {
 	nums := []int{1, 2, 3, 4, 5, 6, 7, 8, 9, 0}
 
