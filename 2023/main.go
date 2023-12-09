@@ -1,9 +1,9 @@
 package main
 
 import (
-	"matteomiceli/aoc/six"
+	"matteomiceli/aoc/seven"
 )
 
 func main() {
-	six.Run()
+	seven.Run()
 }
