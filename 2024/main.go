@@ -4,6 +4,7 @@ import "os"
 
 var days = map[string]func(){
 	"one": One,
+	"two": Two,
 }
 
 func main() {

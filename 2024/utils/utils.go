@@ -10,13 +10,8 @@ import (
 	"strings"
 )
 
-func ReadLines(path string) []string {
-	d, e := os.ReadFile(path)
-	if e != nil {
-		log.Fatal(e)
-	}
-
-	data := string(d)
+func ReadLines(data string) []string {
+	data = strings.TrimSpace(data)
 
 	return strings.Split(data, "\n")
 }
@@ -62,7 +57,6 @@ func FetchInput(day string) string {
 			log.Fatal(err)
 		}
 
-		fmt.Println("data retrieved from file")
 		return string(d)
 	}
 
