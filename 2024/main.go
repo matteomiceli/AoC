@@ -7,6 +7,7 @@ var days = map[string]func(){
 	"two":   Two,
 	"three": Three,
 	"four":  Four,
+	"five":  Five,
 }
 
 func main() {
