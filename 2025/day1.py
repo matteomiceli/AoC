@@ -1,8 +1,8 @@
-from utils import get_data
+from utils import get_lines
 import math
 
 def main():
-    rotations = get_data(1)
+    rotations = get_lines(1)
     dial = 50
     dial_zero = 0
 
